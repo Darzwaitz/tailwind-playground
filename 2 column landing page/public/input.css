@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;600&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-primary: Fira Sans, sans-serif;
+}
+
+body {
+  background: linear-gradient(
+    to bottom,
+    white 0%,
+    white 60%,
+    theme(colors.violet.500) 60%,
+    theme(colors.violet.500) 100%
+  );
+}
+
+/* @media (screen(lg)) { --this doesn't work in tailwind v4 */
+/* @media screen and (min-width: 1024px) { */
+/* use theme() function */
+@media screen and (min-width: theme(breakpoint-lg)) {
+  body {
+    background: linear-gradient(
+      to right,
+      white 0%,
+      white 60%,
+      theme(colors.violet.500) 60%,
+      theme(colors.violet.500) 100%
+    );
+  }
+}
